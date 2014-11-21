@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+<br>
+<p align="center" id="qrcode">请扫描以下二维码登录<br><img src="/qrcodeimage?SESSIONID"><br></p>
+<p align="center" id="output"></p>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script>	
+var poll = function() {
+	$.getJSON('/poll?SESSIONID', function(response) {
+		var cmd = response.cmd;
+		if (cmd == 'scanned') {
+			scanned();
+		} else if (cmd == 'pclogin') {
+			var username=decodeURIComponent(response.username);
+			pclogin(username);
+		}
+		poll();
+	});
+}
+var scanned = function() {
+	$('#output').text('已成功扫描，等待手机确认登录');
+}
+var pclogin = function(username) {
+	$('#qrcode').hide();
+	$('#output').text('欢迎您：' + username + '，您已成功登录');
+}
+poll();
+</script>
+</body>
+</html>
