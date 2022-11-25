@@ -11,9 +11,9 @@ Login to a PC website by scan a qr code with an APP like wechat on your smartpho
 使用方法（Usage）：
 
 1. 在你的安卓手机上安装QRCodeLoginClientAndroid.apk （Install the QRCodeLoginClientAndroid.apk）
-2. 在你的服务器上启动服务端（Run the nodejs server）：node qr.js  注意：需要在防火墙上开放9999端口（Note: must let port 9999 open on your server firewall）
+2. 在你的服务器上启动服务端（Run the nodejs server）：`node qr.js`  注意：需要在防火墙上开放9999端口（Note: must let port 9999 open on your server firewall）
 3. 使用浏览器打开如下网址，正常情况下你应该能看到一个二维码（Open the URL below and you'll see a QR code）：
-   http://YOUR SERVER'S IP:9999/
+   `http://YOUR SERVER'S IP:9999/`
 4. 在手机上打开客户端，点右上角设置一下服务器地址为以上地址，然后保存（Set the server URL on the Android APP）。
 5. 接下来先在手机客户端上登录，可以任意输入一个用户名（Then logined from APP with any username）。
 6. 再下一步，点击“开始扫描”按钮扫一下第3步中打开的网页（And then click the "开始扫描" button to scan the QR code on step 3）。
